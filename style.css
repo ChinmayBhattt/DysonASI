@@ -248,3 +248,61 @@ body {
 .send-btn:hover {
     background: var(--secondary);
 }
+/* Sidebar Menu Items */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.menu-item i {
+    font-size: 20px;
+}
+
+/* Hover Effect */
+.menu-item:hover {
+    background-color: #333;
+}
+
+/* Active Menu Item */
+.menu-item.active {
+    background-color: #444;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #1b1b1b;
+    color: white;
+    padding: 20px;
+}
+
+/* Settings Menu (Initially Hidden) */
+.settings-menu {
+    display: none;
+    flex-direction: column;
+    background: #252525;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+}
+
+.settings-item {
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.settings-item:hover {
+    background: #333;
+}

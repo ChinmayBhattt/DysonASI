@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DysonASI Chat</title>
+    <title>DysonASI - AI Assistant</title>
     
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
@@ -12,15 +12,23 @@
 <body>
     <div class="top-bar">
         <div class="logo"><h2><b>DysonASI</b></h2></div>
-        <div class="icon-group">
-            <i class="fas fa-circle-half-stroke theme-toggle"></i>
-        </div>
+        <div class="icon-group"></div>
     </div>
+    
     <div class="container">
         <div class="container-content">
             <div class="sidebar">
-                <div class="menu-item"><i class="fas fa-comment"></i> New Chat</div>
+                <div class="menu-item new-chat"><i class="fas fa-comment"></i> New Chat</div>
+                <div class="menu-item settings-btn"><i class="fas fa-cog"></i> Settings</div>
+            
+                <!-- Settings Dropdown -->
+                <div class="settings-menu">
+                    <div class="settings-item delete-chats">🗑️ Delete All Chats</div>
+                    <div class="settings-item contact-us">📧 Contact Us</div>
+                    <div class="settings-item login">🔑 Login</div>
+                </div>
             </div>
+            
             <div class="main-content">
                 <div class="chat-header">
                     <h2>AI Assistant</h2>
