@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Toggle Settings Menu
     settingsBtn.addEventListener("click", function () {
-        settingsMenu.style.display = settingsMenu.style.display === "flex" ? "none" : "flex";
+        settingsMenu.style.display = settingsMenu.style.display === "none" ? "flex" : "none";
     });
 
     // Delete All Chats

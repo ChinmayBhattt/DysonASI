@@ -75,6 +75,9 @@ body {
     padding: 20px;
     box-shadow: var(--shadow);
     border-right: 3px solid #363636;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .main-content {
@@ -284,16 +287,21 @@ body {
     padding: 20px;
 }
 
-/* Settings Menu (Initially Hidden) */
+/* Ensure settings menu appears above */
 .settings-menu {
     display: none;
     flex-direction: column;
+    position: absolute;
+    bottom: 70px; /* Adjust this value as needed */
+    left: 20px; /* Adjust this to match your layout */
     background: #252525;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    margin-top: 10px;
+    z-index: 100;
+    
 }
+
 
 .settings-item {
     padding: 12px;
