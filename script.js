@@ -6,6 +6,16 @@ document.addEventListener("DOMContentLoaded", function () {
     let chatHistory = [];
     let currentChatIndex = -1;
 
+    function showThinkingMessage() {
+        const thinkingMessage = document.createElement("div");
+        thinkingMessage.classList.add("message", "ai-message", "thinking-message"); // ✅ Extra class added
+        thinkingMessage.innerText = "DysonASI is thinking...";
+        messagesContainer.appendChild(thinkingMessage);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        return thinkingMessage;
+    }
+    
+
     async function sendMessage() {
         const message = inputField.value.trim();
         if (!message) return;
@@ -19,6 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
         addMessage(message, true);
         inputField.value = "";
 
+        // Show "thinking" effect
+        const thinkingMessage = showThinkingMessage();
+        inputField.disabled = true;
+        sendButton.disabled = true;
+
         try {
             const response = await fetch("http://localhost:5000/chat", {
                 method: "POST",
@@ -31,16 +46,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
             chatHistory[currentChatIndex].push({ text: formattedResponse, isUser: false });
 
-            addMessage(formattedResponse, false);
+            // Remove "thinking" message and add actual response
+            setTimeout(() => {
+                thinkingMessage.remove();
+                addMessage(formattedResponse, false);
+            }, 500);
         } catch (error) {
             console.error("Error:", error);
-            addMessage("Error connecting to DysonASI server.", false);
+            thinkingMessage.innerText = "Error connecting to DysonASI server.";
+        } finally {
+            inputField.disabled = false;
+            sendButton.disabled = false;
         }
     }
 
     function formatResponse(responseText) {
-        responseText = responseText.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>"); // Bold text
-        responseText = responseText.replace(/\*(.*?)\*/g, "<i>$1</i>"); // Italic text
+        responseText = responseText.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
+        responseText = responseText.replace(/\*(.*?)\*/g, "<i>$1</i>");
 
         let lines = responseText.split("\n").map(line => line.trim()).filter(line => line);
         let formattedText = "";
@@ -49,13 +71,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         lines.forEach(line => {
             if (line.startsWith("```")) {
-                if (!inCodeBlock) {
-                    formattedText += "<pre><code>";
-                    inCodeBlock = true;
-                } else {
-                    formattedText += "</code></pre>";
-                    inCodeBlock = false;
-                }
+                formattedText += inCodeBlock ? "</code></pre>" : "<pre><code>";
+                inCodeBlock = !inCodeBlock;
             } else if (inCodeBlock) {
                 formattedText += line + "\n";
             } else if (line.startsWith("• ")) {

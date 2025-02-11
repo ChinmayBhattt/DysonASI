@@ -24,7 +24,10 @@ const predefinedResponses = {
     "can you think like a human": "I can process information and generate responses like a human, but I don't have emotions or personal experiences.",
     "tell me a joke": "Sure! Why don’t rockets ever get good grades? Because they always go over everyone’s head! 🚀😆",
     "what is dysonasi": "DysonASI stands for Dyson Artificial Super Intelligence, designed to assist, guide, and simplify your tasks.",
-    "are you smarter than google assistant": "I’m built differently! Google Assistant is great at real-world tasks, but I focus on intelligent conversation, research, and problem-solving."
+    "are you smarter than google assistant": "I’m built differently! Google Assistant is great at real-world tasks, but I focus on intelligent conversation, research, and problem-solving.",
+    "who made you": "Chinmay Bhatt, Prashant Jain",  // ✅ Added this
+    
+
 };
 
 // Function to find the best-matching predefined response
@@ -33,12 +36,14 @@ const findBestMatch = (userMessage) => {
     const matches = stringSimilarity.findBestMatch(userMessage.toLowerCase(), questions);
     const bestMatch = matches.bestMatch;
 
-    console.log(`User Message: ${userMessage}`);
-    console.log(`Best Match Found: ${bestMatch.target} (Similarity: ${bestMatch.rating})`);
+    console.log(`User Input: ${userMessage}`);
+    console.log(`Best Match: ${bestMatch.target}, Similarity: ${bestMatch.rating}`);
+    
 
-    if (bestMatch.rating > 0.6) { // If similarity is above 60%
+    if (bestMatch.rating > 0.5) { // ✅ Threshold 0.5 kiya
         return predefinedResponses[bestMatch.target];
     }
+    
     return null;
 };
 
