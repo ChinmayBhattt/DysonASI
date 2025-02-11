@@ -180,3 +180,77 @@ function newChat() {
     document.getElementById('chatBox').innerHTML = "";
     alert("New chat started! Previous chat is saved.");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    
+    // Check local storage for saved theme preference
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light-mode");
+    }
+
+    document.querySelector(".toggle-theme").addEventListener("click", function () {
+        body.classList.toggle("light-mode");
+
+        if (body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+        } else {
+            localStorage.setItem("theme", "dark");
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const elementsToToggle = [
+        body,
+        document.querySelector(".container"),
+        document.querySelector(".main-content"),
+        document.querySelector(".messages-container"),
+        document.querySelector(".input-container"),
+        document.querySelector(".top-bar"),
+        document.querySelector(".sidebar"),
+    ];
+
+    // Apply saved theme from local storage
+    if (localStorage.getItem("theme") === "light") {
+        elementsToToggle.forEach(el => el?.classList.add("light-mode"));
+    }
+
+    document.querySelector(".toggle-theme").addEventListener("click", function () {
+        elementsToToggle.forEach(el => el?.classList.toggle("light-mode"));
+
+        if (body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+        } else {
+            localStorage.setItem("theme", "dark");
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    
+    // Check local storage for saved theme preference
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light-mode");
+    }
+
+    document.querySelector(".toggle-theme").addEventListener("click", function () {
+        body.classList.toggle("light-mode");
+
+        if (body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            body.style.background = "#f8f9fa"; // Light mode background
+        } else {
+            localStorage.setItem("theme", "dark");
+            body.style.background = "#0A0A0A"; // Dark mode background
+        }
+    });
+
+    // Apply background color on load
+    if (localStorage.getItem("theme") === "light") {
+        body.style.background = "#f8f9fa";
+    } else {
+        body.style.background = "#0A0A0A";
+    }
+});

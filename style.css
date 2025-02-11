@@ -374,3 +374,63 @@ body {
     background-color: #3A4AA6;
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 }
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #f9f9f9;
+    color: #222;
+}
+
+body.light-mode .sidebar, 
+body.light-mode .settings-menu {
+    background-color: #ffffff;
+    color: #000;
+}
+
+body.light-mode .settings-item:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+/* Light Mode */
+.light-mode {
+    --primary: #422afb;
+    --secondary: #7551ff;
+    --dark: #1b254b;
+    --light: #f8f9fa;
+    --shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+    background: var(--light);
+    color: var(--dark);
+}
+
+.light-mode .top-bar,
+.light-mode .sidebar,
+.light-mode .messages-container,
+.light-mode .input-container {
+    background: white;
+    color: var(--dark);
+}
+
+.light-mode .search-bar,
+.light-mode .input-field {
+    background: #f1f3f9;
+    color: var(--dark);
+}
+
+.light-mode .ai-message {
+    background: #e9ecef;
+    color: var(--dark);
+}
+
+.light-mode .user-message {
+    background: var(--primary);
+    color: white;
+}
+
+body.light-mode {
+    background: #f8f9fa; /* Light Mode Background */
+    color: #1b254b; /* Light Mode Text */
+}
+
+body.dark-mode {
+    background: #0A0A0A; /* Dark Mode Background */
+    color: #E2E8F0; /* Dark Mode Text */
+}
