@@ -166,3 +166,17 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelector(".contact-us").addEventListener("click", function () {
     window.open("https://linktr.ee/DysonASI?fbclid=PAZXh0bgNhZW0CMTEAAaac0oAhOBzhcAykmU8tHgJH3197MU72-X23uy8R-EgtxubqGzJhm2WZj3o_aem_rtsPjaZxqqgG2R3Ai8JSZQ", "_blank");
 });
+
+// Function to create a new chat session
+function newChat() {
+    const chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
+    const currentChat = document.getElementById('chatBox').innerHTML;
+    
+    if (currentChat.trim() !== "") {
+        chatHistory.push(currentChat);
+        localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+    }
+    
+    document.getElementById('chatBox').innerHTML = "";
+    alert("New chat started! Previous chat is saved.");
+}
