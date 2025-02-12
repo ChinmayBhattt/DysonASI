@@ -36,7 +36,6 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
-    border-radius: 50px;
 }
 
 .search-bar {
