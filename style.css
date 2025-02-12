@@ -433,3 +433,24 @@ body.dark-mode {
     background: #0A0A0A; /* Dark Mode Background */
     color: #E2E8F0; /* Dark Mode Text */
 }
+
+
+
+.file-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.file-icon:hover {
+    background: var(--secondary);
+}
+

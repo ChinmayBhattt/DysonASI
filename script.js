@@ -254,3 +254,46 @@ document.addEventListener("DOMContentLoaded", () => {
         body.style.background = "#0A0A0A";
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const settingsBtn = document.querySelector(".settings-btn");
+    const settingsMenu = document.querySelector(".settings-menu");
+
+    // Toggle Settings Menu when clicking the button
+    settingsBtn.addEventListener("click", function (event) {
+        event.stopPropagation(); // ✅ Stops event from propagating to document
+        settingsMenu.style.display = (settingsMenu.style.display === "none" || settingsMenu.style.display === "") ? "flex" : "none";
+    });
+
+    // Close settings menu when clicking anywhere else on the page
+    document.addEventListener("click", function (event) {
+        if (!settingsMenu.contains(event.target) && !settingsBtn.contains(event.target)) {
+            settingsMenu.style.display = "none";
+        }
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const settingsBtn = document.querySelector(".settings-btn");
+    const settingsMenu = document.querySelector(".settings-menu");
+
+    // Toggle Settings Menu when clicking the button
+    settingsBtn.addEventListener("click", function (event) {
+        event.stopPropagation(); // ✅ Prevents event from bubbling
+        if (settingsMenu.style.display === "none" || settingsMenu.style.display === "") {
+            settingsMenu.style.display = "flex"; // ✅ Open menu
+        } else {
+            settingsMenu.style.display = "none"; // ✅ Close menu
+        }
+    });
+
+    // Close settings menu when clicking anywhere else on the page
+    document.addEventListener("click", function (event) {
+        if (settingsMenu.style.display === "flex" && !settingsBtn.contains(event.target) && !settingsMenu.contains(event.target)) {
+            settingsMenu.style.display = "none";
+        }
+    });
+});
+
