@@ -392,4 +392,31 @@ function stopVoiceRecognition() {
     isListening = false;
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    function checkMobileView() {
+        if (window.innerWidth <= 768) {
+            document.body.classList.add("mobile-chat-view");
+        } else {
+            document.body.classList.remove("mobile-chat-view");
+        }
+    }
 
+    checkMobileView();
+    window.addEventListener("resize", checkMobileView);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.querySelector(".menu-btn"); // Sidebar open button
+    const sidebar = document.querySelector(".sidebar");
+
+    menuButton.addEventListener("click", function () {
+        sidebar.classList.toggle("open"); // Sidebar show/hide
+    });
+
+    // Close sidebar when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!sidebar.contains(event.target) && !menuButton.contains(event.target)) {
+            sidebar.classList.remove("open");
+        }
+    });
+});
