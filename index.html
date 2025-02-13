@@ -10,6 +10,7 @@
       
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+    <script defer src="newchat.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
@@ -57,10 +58,14 @@
                         <i class="fas fa-lightbulb"></i> Thoughts
                     </div>
                    
+                   
                     
                     <input type="file" id="file-upload" accept="image/*,video/*" hidden>
                     <input type="text" class="input-field" placeholder="Type your message...">
                     <button class="send-btn"><i class="fas fa-paper-plane"></i> Send</button>
+                    <div class="voice-icon" onclick="startVoiceRecognition()">
+                        <i class="fas fa-microphone"></i>
+                    </div>
                 </div>
                 
 

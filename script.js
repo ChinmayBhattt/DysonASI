@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sendButton = document.querySelector(".send-btn");
     const messagesContainer = document.querySelector(".messages-container");
     const newChatButton = document.querySelector(".menu-item");
+    
     let chatHistory = [];
     let currentChatIndex = -1;
 
@@ -336,3 +337,59 @@ function toggleEffect(element) {
         setTimeout(() => sparkle.remove(), 600);
     }
 }
+let recognition;
+let isListening = false;
+
+function toggleVoiceRecognition() {
+    let voiceIcon = document.querySelector(".voice-icon");
+
+    if (!isListening) {
+        // 🎤 Start Voice Recognition
+        isListening = true;
+        voiceIcon.classList.add("active");
+
+        if (recognition) {
+            recognition.stop(); // Pehle ka instance stop karo
+        }
+
+        recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = "en-US";
+        recognition.interimResults = false;
+
+        recognition.onstart = function () {
+            console.log("🎤 Mic On...");
+        };
+
+        recognition.onresult = function (event) {
+            let transcript = event.results[0][0].transcript;
+            document.querySelector(".input-field").value = transcript;
+            stopVoiceRecognition(); // 🔴 Auto Stop on Result
+        };
+
+        recognition.onerror = function (event) {
+            console.error("❌ Error:", event.error);
+            stopVoiceRecognition(); // 🔴 Auto Stop on Error
+        };
+
+        recognition.onend = function () {
+            if (isListening) stopVoiceRecognition();
+        };
+
+        recognition.start();
+    } else {
+        stopVoiceRecognition(); // ✋ Stop Mic on Click
+    }
+}
+
+function stopVoiceRecognition() {
+    let voiceIcon = document.querySelector(".voice-icon");
+
+    if (recognition) {
+        recognition.stop();
+    }
+
+    voiceIcon.classList.remove("active");
+    isListening = false;
+}
+
+
