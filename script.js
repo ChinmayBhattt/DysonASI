@@ -154,18 +154,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Contact Us
-    document.querySelector(".contact-us").addEventListener("click", function () {
-        alert("Contact us at: support@dysonasi.com");
-    });
-
+    // document.querySelector(".contact-us").addEventListener("click", function () {
+    //     alert("Contact us at: support@dysonasi.com");
+    // });
+        document.querySelector(".contact-us").addEventListener("click", function () {
+            window.open("https://linktr.ee/DysonASI", "_blank");
+        });
+    
+    
     // Login
     document.querySelector(".login").addEventListener("click", function () {
         window.location.href = "/login"; // Redirect to login page
     });
 });
-document.querySelector(".contact-us").addEventListener("click", function () {
-    window.open("https://linktr.ee/DysonASI?fbclid=PAZXh0bgNhZW0CMTEAAaac0oAhOBzhcAykmU8tHgJH3197MU72-X23uy8R-EgtxubqGzJhm2WZj3o_aem_rtsPjaZxqqgG2R3Ai8JSZQ", "_blank");
-});
+// document.querySelector(".contact-us").addEventListener("click", function () {
+//     window.open("https://linktr.ee/DysonASI", "_blank");
+// });
 
 // Function to create a new chat session
 function newChat() {
@@ -297,3 +301,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+const newChatButton = document.querySelector(".new-chat"); // ✅ Use specific class for "New Chat" button
+newChatButton.addEventListener("click", startNewChat);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const thoughtBtn = document.querySelector(".thought-icon");
+
+    thoughtBtn.addEventListener("click", function () {
+        this.classList.toggle("active");
+    });
+});
+function toggleSearch(element) {
+    element.classList.toggle("active");
+    // Yahan AI search logic add kar sakte ho
+}
+
+function toggleEffect(element) {
+    element.classList.toggle("active");
+
+    // Sparkle Effect
+    for (let i = 0; i < 5; i++) {  // Creating multiple sparkles
+        let sparkle = document.createElement("div");
+        sparkle.classList.add("sparkle");
+        
+        let x = Math.random() * element.clientWidth;
+        let y = Math.random() * element.clientHeight;
+        
+        sparkle.style.left = `${x}px`;
+        sparkle.style.top = `${y}px`;
+
+        element.appendChild(sparkle);
+
+        // Remove sparkle after animation
+        setTimeout(() => sparkle.remove(), 600);
+    }
+}

@@ -454,3 +454,110 @@ body.dark-mode {
     background: var(--secondary);
 }
 
+/* search */
+.search-icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #252525; /* Normal gray background */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-left: 10px;
+    border: 1px solid #2D2D2D;
+}
+
+.search-icon:hover {
+    background: #333;
+}
+
+/* Active state (Blue highlight on click) */
+.search-icon.active {
+    background: var(--primary);
+    color: white;
+}
+/* thought */
+
+
+.thought-icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #252525; /* Normal gray background */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-left: 10px;
+    border: 1px solid #2D2D2D;
+}
+
+.thought-icon:hover {
+    background: #333;
+}
+
+/* Active state (Blue highlight on click) */
+.thought-icon.active {
+    background: var(--primary);
+    color: white;
+}
+
+
+/* Search & Thought Icons */
+.search-icon, .thought-icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: linear-gradient(45deg, #1e1e1e, #333333); /* Gradient background */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-left: 10px;
+    border: 1px solid #444;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.search-icon:hover, .thought-icon:hover {
+    background: linear-gradient(45deg, #333, #555);
+}
+
+/* Active State - Blue Glow */
+.search-icon.active, .thought-icon.active {
+    background: linear-gradient(45deg, #007bff, #00aaff);
+    color: white;
+    box-shadow: 0px 0px 15px rgba(0, 122, 255, 0.5);
+    animation: glow 1s infinite alternate;
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0% { box-shadow: 0px 0px 10px rgba(0, 122, 255, 0.5); }
+    100% { box-shadow: 0px 0px 20px rgba(0, 122, 255, 0.8); }
+}
+
+/* Sparkle Effect */
+@keyframes sparkle {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(2); }
+}
+
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkle 0.6s ease-out;
+}

@@ -33,7 +33,7 @@
 
                      <div class="settings-menu">
                          <div class="settings-item delete-chats"><i class="fi fi-br-trash"></i> Delete All Chats</div>
-                         <div class="settings-item contact-us"><i class="fi fi-br-envelope"></i> Contact Us</div>
+                         <div class="settings-item contact-us"><i class="fi fi-br-envelope" > </i> Contact Us</div> <a href="https://linktr.ee/DysonASI"></a>
                          <div class="settings-item toggle-theme"><i class="fi fi-bs-palette"></i> Toggle Theme</div>
                          <div class="settings-item login"><i class="fi fi-br-sign-in-alt"></i> Login</div>
                      </div>
@@ -45,15 +45,25 @@
                 <div class="chat-header">
                     <h2>AI Assistant</h2>
                 </div>
-                <div class="messages-container"></div>
-                <div class="input-container">
+        <div class="messages-container"></div>
+            <div class="input-container">
                     <label for="file-upload" class="file-icon">
                         <i class="fas fa-plus"></i> 
                     </label>
+                    <div class="search-icon" onclick="toggleSearch(this)">
+                        <i class="fas fa-search"></i> Search
+                    </div>
+                    <div class="thought-icon" onclick="toggleSearch(this)">
+                        <i class="fas fa-lightbulb"></i> Thoughts
+                    </div>
+                   
+                    
                     <input type="file" id="file-upload" accept="image/*,video/*" hidden>
                     <input type="text" class="input-field" placeholder="Type your message...">
                     <button class="send-btn"><i class="fas fa-paper-plane"></i> Send</button>
                 </div>
+                
+
             </div>
         </div>
     </div>
