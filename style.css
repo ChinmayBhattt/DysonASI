@@ -633,19 +633,18 @@ body.dark-mode {
     cursor: pointer;
 }
 
-/* 
- */
-.messages-container {
+
+/* .messages-container {
     /* background-image: url('DysonASI[1].png'); Background me image lagayi */
-    background-size: auto 110%;
+/*     background-size: auto 110%; */
     /* background-size: cover; Image ko pura container cover karne ke liye */
-    background-position: center; /* Image ko center me align karne ke liye */
-    background-repeat: no-repeat; /* Image ko repeat hone se rokne ke liye */
-    width: 100%; /* Full width cover kare */
-    height: 100%; /* Full height cover kare */
-    overflow-y: auto; /* Messages scroll hone ke liye */
-    padding: 10px;
-    border-radius: 10px; /* Optional: Rounded corners */
-}
+/*     background-position: center; /* Image ko center me align karne ke liye */ 
+/*     background-repeat: no-repeat; /* Image ko repeat hone se rokne ke liye */ 
+/*     width: 100%; /* Full width cover kare */ 
+/*     height: 100%; /* Full height cover kare */ 
+/*     overflow-y: auto; /* Messages scroll hone ke liye */ 
+/*     padding: 10px; */
+/*     border-radius: 10px; /* Optional: Rounded corners */ 
+/* } */
 
     
