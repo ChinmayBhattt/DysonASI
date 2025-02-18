@@ -591,3 +591,61 @@ body.dark-mode {
 }
 
 
+
+
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #444654;
+    border-left: 1px solid #2f2f3a;
+}
+.chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #2f2f3a;
+    background: #343541;
+}
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #40414f;
+    color: white;
+    outline: none;
+}
+.chat-input button {
+    padding: 10px;
+    background: #10a37f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* 
+ */
+.messages-container {
+    /* background-image: url('DysonASI[1].png'); Background me image lagayi */
+    background-size: auto 110%;
+    /* background-size: cover; Image ko pura container cover karne ke liye */
+    background-position: center; /* Image ko center me align karne ke liye */
+    background-repeat: no-repeat; /* Image ko repeat hone se rokne ke liye */
+    width: 100%; /* Full width cover kare */
+    height: 100%; /* Full height cover kare */
+    overflow-y: auto; /* Messages scroll hone ke liye */
+    padding: 10px;
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+    

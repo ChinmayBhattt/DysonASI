@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <script defer src="newchat.js"></script>
+    <script defer src="newAPIKey.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
@@ -27,7 +29,8 @@
         <div class="container-content">
             <div class="sidebar">
                 <div class="menu-item new-chat"><i class="fi fi-br-comment-medical"></i> New Chat</div>
-                
+                <!-- <button class="menu-item new-chat"><i class="fi fi-br-comment-medical"></i> New Chat</button> -->
+
                 <!-- Settings Dropdown -->
                 <div>
                      <div class="menu-item settings-btn"><i class="fi fi-br-settings"></i> Settings</div>
@@ -46,7 +49,10 @@
                 <div class="chat-header">
                     <h2>AI Assistant</h2>
                 </div>
-        <div class="messages-container"></div>
+
+        <div class="messages-container">
+            <img src="DysonASI[1].png" alt="background" class="bg-image">
+        </div>
             <div class="input-container">
                     <label for="file-upload" class="file-icon">
                         <i class="fas fa-plus"></i> 
@@ -72,5 +78,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>

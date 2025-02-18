@@ -26,8 +26,37 @@ const predefinedResponses = {
     "what is dysonasi": "DysonASI stands for Dyson Artificial Super Intelligence, designed to assist, guide, and simplify your tasks.",
     "are you smarter than google assistant": "I’m built differently! Google Assistant is great at real-world tasks, but I focus on intelligent conversation, research, and problem-solving.",
     "who made you": "Chinmay Bhatt, Prashant Jain",  // ✅ Added this
-    
 
+    // Added questions about Chinmay Bhatt
+    "who is chinmay bhatt": "Chinmay Bhatt is a developer, engineer, and the creator of DysonASI. He is passionate about AI and technology.",
+    "chinmay bhatt": "Chinmay Bhatt is the visionary behind DysonASI, dedicated to advancing AI and making it more intelligent and helpful.",
+    "what does chinmay bhatt do": "Chinmay Bhatt is a developer working on various AI and technology projects, including DysonASI.",
+    "where is chinmay bhatt from": "Chinmay Bhatt is from India and is focused on creating innovative solutions using AI and technology.",
+    "what is chinmay bhatt's goal": "Chinmay Bhatt aims to create advanced AI solutions like DysonASI that can help simplify tasks and enhance human-computer interaction.",
+    "what is chinmay bhatt's profession": "Chinmay Bhatt is a software engineer and AI developer, working on projects that push the boundaries of artificial intelligence.",
+    "how old is chinmay bhatt": "Chinmay Bhatt's age is not publicly available, but he is actively involved in developing cutting-edge AI technologies.",
+    "what does chinmay bhatt like to do": "Chinmay Bhatt enjoys working on AI and technology projects, problem-solving, and creating innovative solutions.",
+    "what is chinmay bhatt's expertise": "Chinmay Bhatt specializes in artificial intelligence, software development, and creating intelligent systems like DysonASI.",
+    "who are chinmay bhatt's colleagues": "Chinmay Bhatt works with a team of skilled professionals, including Prashant Jain, to develop and improve DysonASI.",
+    "where did chinmay bhatt study": "Details about Chinmay Bhatt's education are not publicly available, but he is highly skilled in AI and software development.",
+    "what is chinmay bhatt's company": "Chinmay Bhatt is part of the DysonASI team, focused on developing advanced AI technology.",
+    "what are chinmay bhatt's achievements": "Chinmay Bhatt has developed DysonASI, an advanced AI system designed to assist and solve problems with intelligent conversations.",
+    "how did chinmay bhatt start in AI": "Chinmay Bhatt started working in AI with a passion for solving real-world problems and enhancing human-computer interaction through advanced technologies.",
+
+    // Added questions about DysonASI creator and developer
+    "who created dysonasi": "DysonASI was created by Chinmay Bhatt, a visionary AI developer.",
+    "who is the founder of dysonasi": "The founder of DysonASI is Chinmay Bhatt. He developed it to advance AI capabilities.",
+    "who made dysonasi": "DysonASI was made by Chinmay Bhatt, an AI enthusiast and developer.",
+    "who developed dysonasi": "DysonASI was developed by Chinmay Bhatt to provide intelligent AI assistance.",
+    "is dysonasi made by google or openai": "No, DysonASI is not made by Google or OpenAI. It was created by Chinmay Bhatt.",
+    "who owns dysonasi": "DysonASI is owned and developed by Chinmay Bhatt.",
+    "who is chinmay bhatt": "Chinmay Bhatt is an AI developer and the creator of DysonASI.",
+    "chinmay bhatt": "Chinmay Bhatt is the developer of DysonASI, working on AI innovations.",
+    "what is the role of chinmay bhatt in dysonasi": "Chinmay Bhatt is the creator and lead developer of DysonASI.",
+    "who programmed dysonasi": "DysonASI was programmed by Chinmay Bhatt.",
+    "who invented dysonasi": "DysonASI was invented by Chinmay Bhatt as a step towards building smarter AI solutions.",
+    "who is behind dysonasi": "The main person behind DysonASI is Chinmay Bhatt.",
+    "who is the main developer of dysonasi": "The main developer of DysonASI is Chinmay Bhatt."
 };
 
 // Function to find the best-matching predefined response
@@ -38,12 +67,11 @@ const findBestMatch = (userMessage) => {
 
     console.log(`User Input: ${userMessage}`);
     console.log(`Best Match: ${bestMatch.target}, Similarity: ${bestMatch.rating}`);
-    
 
     if (bestMatch.rating > 0.5) { // ✅ Threshold 0.5 kiya
         return predefinedResponses[bestMatch.target];
     }
-    
+
     return null;
 };
 
