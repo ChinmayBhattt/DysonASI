@@ -1,6 +1,6 @@
  # DysonASI
 
-![DysonASI Logo](https://your-logo-url.com)  
+
 An advanced AI-powered chatbot built to provide intelligent and context-aware responses.
 
 ## 🚀 Features
