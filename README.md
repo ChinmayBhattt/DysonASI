@@ -63,7 +63,7 @@ Pull requests are welcome! Follow these steps:
 4. Open a pull request
 
 ## 📞 Contact
-For support or inquiries, reach out at: `support@dysonasi.com`
+For support or inquiries, reach out at: `chinmaybhatt26t@gmail.com`
 
 ---
 Made with ❤️ by **Chinmay Bhatt**
