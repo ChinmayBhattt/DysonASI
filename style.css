@@ -100,18 +100,18 @@ body {
 
 .company-logo {
     font-size: 28px;
-    font-weight: 700;
-    background: var(--gradient-primary);
+    font-weight: 800;
+    background: linear-gradient(135deg, #FFFFFF 0%, #666666 50%, #000000 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 32px;
     letter-spacing: -0.5px;
-    animation: logoFloat 3s ease-in-out infinite;
+    text-shadow: none;
 }
 
 @keyframes logoFloat {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+    50% { transform: translateY(0); }
 }
 
 /* .new-thread {
@@ -316,28 +316,28 @@ body {
 .chat-header {
     text-align: center;
     margin-bottom: 40px;
-    animation: fadeInDown 1s ease;
 }
 
 .chat-header h1 {
     font-size: 42px;
-    font-weight: 700;
-    background: var(--gradient-primary);
+    font-weight: 800;
+    background: linear-gradient(135deg, #FFFFFF 0%, #666666 50%, #000000 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1.2;
-    animation: textGlow 2s ease-in-out infinite alternate;
+    text-shadow: none;
 }
 
+/* Remove the animations */
 @keyframes textGlow {
-    from { text-shadow: 0 0 10px rgba(0, 122, 255, 0.2); }
-    to { text-shadow: 0 0 20px rgba(0, 122, 255, 0.4); }
+    from { text-shadow: none; }
+    to { text-shadow: none; }
 }
 
 @keyframes fadeInDown {
     from {
-        opacity: 0;
-        transform: translateY(-20px);
+        opacity: 1;
+        transform: translateY(0);
     }
     to {
         opacity: 1;
@@ -2384,7 +2384,7 @@ body.light-mode .nav-item.active {
     right: 0;
     padding: 24px;
     background: var(--bg-dark);
-    z-index: 10;
+    z-index: 100;
 }
 
 .v0-input-wrapper {
@@ -2393,15 +2393,15 @@ body.light-mode .nav-item.active {
 }
 
 .v0-input-box {
+    position: relative;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 16px;
-    overflow: hidden;
+    overflow: visible;
     transition: var(--transition-bounce);
     box-shadow: var(--shadow-lg);
     max-width: 900px;
     margin: 0 auto;
-    position: relative;
     z-index: 11;
 }
 
@@ -2843,5 +2843,113 @@ body.light-mode .nav-item.active {
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.2);
     color: #fff;
+}
+
+/* Models Dropdown Styles */
+.models-dropdown {
+    position: relative;
+}
+
+.v0-models-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.v0-models-btn:hover {
+    background: var(--gradient-light);
+    color: var(--text-primary);
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: var(--shadow-sm);
+}
+
+.models-menu {
+    position: absolute;
+    top: auto;
+    bottom: calc(100% + 10px);
+    right: 0;
+    background: var(--bg-sidebar);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    width: 280px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+    z-index: 1000;
+}
+
+.models-dropdown:hover .models-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.model-option {
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.model-option:last-child {
+    border-bottom: none;
+}
+
+.model-option:hover {
+    background: var(--glass-bg);
+}
+
+.model-name {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.model-desc {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* Add active state for selected model */
+.model-option.active {
+    background: var(--gradient-dark);
+}
+
+.model-option.active .model-name {
+    color: var(--accent-color);
+}
+
+/* Mobile responsive styles for models dropdown */
+@media screen and (max-width: 768px) {
+    .models-menu {
+        width: 240px;
+        bottom: calc(100% + 8px);
+    }
+    
+    .model-option {
+        padding: 10px 14px;
+    }
+    
+    .model-name {
+        font-size: 13px;
+    }
+    
+    .model-desc {
+        font-size: 11px;
+    }
 }
 

@@ -392,6 +392,32 @@ function initializeChat() {
 
     // Also scroll when the page loads
     document.addEventListener('DOMContentLoaded', scrollToLatestMessage);
+
+    // Model selection functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const modelOptions = document.querySelectorAll('.model-option');
+        const modelsBtn = document.querySelector('.v0-models-btn');
+        
+        // Set initial model
+        let currentModel = 'Grok 3';
+        modelsBtn.innerHTML = `<i class="fas fa-robot"></i>${currentModel}`;
+        modelOptions[0].classList.add('active');
+
+        modelOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove active class from all options
+                modelOptions.forEach(opt => opt.classList.remove('active'));
+                
+                // Add active class to selected option
+                this.classList.add('active');
+                
+                // Update button text
+                const modelName = this.querySelector('.model-name').textContent;
+                currentModel = modelName;
+                modelsBtn.innerHTML = `<i class="fas fa-robot"></i>${modelName}`;
+            });
+        });
+    });
 }
 
 
